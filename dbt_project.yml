@@ -39,5 +39,8 @@ models:
   dbt_f1:
     # Applies to all files under models/example/
     example:
-      +materialized: table
-      +group: land_operations_analytics_engineering
+      + access: public
+      + materialized: table
+      + transient: false
+      + contract: {enforced: true}
+      + group: land_operations_analytics_engineering
